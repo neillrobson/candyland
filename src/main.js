@@ -1,1 +1,3 @@
-console.log("Hello JS World!");
+import app from './app/app.module';
+
+app.init();
