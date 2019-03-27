@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = (env, argv) => ({
     entry: {
@@ -30,6 +31,10 @@ module.exports = (env, argv) => ({
             hash: true,
             template: './index.html',
             filename: 'index.html'
+        }),
+        new WorkboxPlugin.GenerateSW({
+            skipWaiting: true,
+            clientsClaim: true
         })
     ],
     devServer: {
