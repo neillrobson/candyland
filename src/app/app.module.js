@@ -1,3 +1,5 @@
+import appComponent from './app.component';
+
 class App {
     init() {
         this.initComponents();
@@ -5,7 +7,7 @@ class App {
     }
 
     initComponents() {
-        // TODO
+        appComponent.init();
     }
 
     initServiceWorker() {
