@@ -5,7 +5,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = (env, argv) => ({
     entry: {
-        main: './src/main.js'
+        main: './src/main.jsx'
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -16,13 +16,16 @@ module.exports = (env, argv) => ({
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
     plugins: [
         new CleanWebpackPlugin(),

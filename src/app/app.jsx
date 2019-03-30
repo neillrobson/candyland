@@ -1,13 +1,12 @@
-import appComponent from './app.component';
+import React from 'react';
 
-class App {
-    init() {
-        this.initComponents();
+export default class App extends React.Component {
+    constructor() {
+        super();
         this.initServiceWorker();
-    }
-
-    initComponents() {
-        appComponent.init();
+        this.state = {
+            title: "Hello World Candyland React Woohoo"
+        };
     }
 
     initServiceWorker() {
@@ -22,6 +21,10 @@ class App {
                 });
         }
     }
-}
 
-export default app = new App();
+    render() {
+        return (
+            <span>{this.state.title}</span>
+        )
+    }
+}
