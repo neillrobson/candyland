@@ -26,10 +26,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <span>{this.state.title}</span>
-                <Deck />
-            </div>
+            <Deck />
         );
     }
 }

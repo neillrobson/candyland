@@ -27,8 +27,17 @@ export default class Deck extends React.Component {
 
     render() {
         let className = 'current-card ' + this.state.currentCard;
+        let message;
+        if (!this.state.currentCard) {
+            if (this.state.drawPile.length === 0) {
+                message = "Draw pile is empty"
+            } else {
+                message = "Click to draw a card"
+            }
+        }
         return (
             <div className={className} onClick={this.handleClick}>
+                {message}
             </div>
         );
     }
