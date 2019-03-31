@@ -7,7 +7,7 @@ export default class Deck extends React.Component {
         super(props);
         this.state = {
             currentCard: null,
-            drawPile: ['cat', 'dog', 'fish'],
+            drawPile: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
             discardPile: []
         };
         this.handleClick = this.handleClick.bind(this);
@@ -26,9 +26,9 @@ export default class Deck extends React.Component {
     }
 
     render() {
+        let className = 'current-card ' + this.state.currentCard;
         return (
-            <div className="current-card" onClick={this.handleClick}>
-                {this.state.currentCard}
+            <div className={className} onClick={this.handleClick}>
             </div>
         );
     }
