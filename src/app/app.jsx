@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Deck from './deck';
+
 export default class App extends React.Component {
     constructor() {
         super();
@@ -24,7 +26,10 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <span>{this.state.title}</span>
-        )
+            <div>
+                <span>{this.state.title}</span>
+                <Deck />
+            </div>
+        );
     }
 }
