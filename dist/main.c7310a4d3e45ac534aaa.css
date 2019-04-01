@@ -1,0 +1,37 @@
+.current-card {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.current-card::before {
+    position: absolute;
+    display: block;
+    width: 90%;
+    height: 42.5%;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.current-card.red::before {
+    background-color: #e36279;
+}
+.current-card.orange::before {
+    background-color: #e48420;
+}
+.current-card.yellow::before {
+    background-color: #dbc94c;
+}
+.current-card.green::before {
+    background-color: #5cb585;
+}
+.current-card.blue::before {
+    background-color: #3793e0;
+}
+.current-card.purple::before {
+    background-color: #8c5f96;
+}
