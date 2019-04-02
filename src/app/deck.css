@@ -35,3 +35,10 @@
 .current-card.purple::before {
     background-color: #8c5f96;
 }
+
+.deck-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

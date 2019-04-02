@@ -2,6 +2,8 @@ import React from 'react';
 
 import Deck from './deck';
 
+import './app.css';
+
 export default class App extends React.Component {
     constructor() {
         super();

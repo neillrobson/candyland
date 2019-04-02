@@ -57,13 +57,15 @@ export default class Deck extends React.Component {
             }
         }
         return (
-            <div className="deck">
-                <div className={cardClassName} onClick={this.handleClick}>
-                    {message}
-                </div>
-                <div className="controls">
-                    <button onClick={this.shuffle}>Shuffle</button>
-                    <button onClick={this.reset}>Reset</button>
+            <div className="deck-container">
+                <div className="deck">
+                    <div className={cardClassName} onClick={this.handleClick}>
+                        {message}
+                    </div>
+                    <div className="controls">
+                        <button onClick={this.shuffle}>Shuffle</button>
+                        <button onClick={this.reset}>Reset</button>
+                    </div>
                 </div>
             </div>
         );
