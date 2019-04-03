@@ -36,7 +36,9 @@ module.exports = (env, argv) => ({
         extensions: ['.js', '.jsx']
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['**/*', '!.git']
+        }),
         new WorkboxPlugin.GenerateSW({
             skipWaiting: true,
             clientsClaim: true
