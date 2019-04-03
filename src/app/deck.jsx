@@ -2,9 +2,23 @@ import React from 'react';
 
 import './deck.css';
 
+let drawPile = new Array(60);
+drawPile.fill("red", 0, 8)
+    .fill("red double", 8, 10)
+    .fill("orange", 10, 18)
+    .fill("orange double", 18, 20)
+    .fill("yellow", 20, 28)
+    .fill("yellow double", 28, 30)
+    .fill("green", 30, 38)
+    .fill("green double", 38, 40)
+    .fill("blue", 40, 48)
+    .fill("blue double", 48, 50)
+    .fill("purple", 50, 58)
+    .fill("purple double", 58, 60);
+
 const INITIAL_STATE = {
     currentCard: null,
-    drawPile: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
+    drawPile,
     discardPile: []
 }
 
@@ -47,7 +61,8 @@ export default class Deck extends React.Component {
     }
 
     render() {
-        let cardClassName = 'current-card ' + this.state.currentCard;
+        let cardClassName = 'current-card ';
+        cardClassName += this.state.currentCard ? this.state.currentCard : 'empty';
         let message;
         if (!this.state.currentCard) {
             if (this.state.drawPile.length === 0) {
@@ -60,7 +75,9 @@ export default class Deck extends React.Component {
             <div className="deck-container">
                 <div className="deck">
                     <div className={cardClassName} onClick={this.handleClick}>
-                        {message}
+                        <span className="message">{message}</span>
+                        <div className="square"></div>
+                        <div className="square"></div>
                     </div>
                     <div className="controls">
                         <button onClick={this.shuffle}>Shuffle</button>
