@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './deck.css';
+import Logo from '../../res/gktwu.jpg';
 
 let drawPile = new Array(60);
 drawPile.fill("red", 0, 8)
@@ -72,7 +73,7 @@ export default class Deck extends React.Component {
         let message;
         if (this.state.drawPile.length === 0) {
             message = "Draw pile is empty"
-        } else if (this.state.currentCard === null) {
+        } else {
             message = "Click to draw a card"
         }
         return (
@@ -81,6 +82,7 @@ export default class Deck extends React.Component {
                     <div className="card-container" onClick={this.handleClick}>
                         <div className={cardInnerClassName}>
                             <div className="card-back">
+                                <img className="logo" src={Logo}></img>
                                 <p className="message">{message}</p>
                             </div>
                             <div className={cardFrontClassName}>
