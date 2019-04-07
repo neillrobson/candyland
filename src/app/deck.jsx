@@ -18,6 +18,7 @@ drawPile.fill("red", 0, 8)
 
 const INITIAL_STATE = {
     currentCard: null,
+    currentCardVisible: false,
     drawPile,
     discardPile: []
 }
@@ -34,15 +35,18 @@ export default class Deck extends React.Component {
     }
 
     handleClick() {
-        if (this.state.currentCard) {
+        if (this.state.currentCardVisible) {
             this.setState(state => ({
+                currentCardVisible: false,
                 discardPile: state.discardPile.concat(state.currentCard)
             }));
+        } else if (this.state.drawPile.length > 0) {
+            this.setState(state => ({
+                currentCard: state.drawPile.pop(),
+                drawPile: state.drawPile,
+                currentCardVisible: true
+            }));
         }
-        this.setState(state => ({
-            currentCard: state.drawPile.pop(),
-            drawPile: state.drawPile
-        }));
     }
 
     shuffle() {
@@ -61,23 +65,29 @@ export default class Deck extends React.Component {
     }
 
     render() {
-        let cardClassName = 'current-card ';
-        cardClassName += this.state.currentCard ? this.state.currentCard : 'empty';
+        let cardInnerClassName = 'card-inner';
+        cardInnerClassName += this.state.currentCardVisible ? ' flipped' : '';
+        let cardFrontClassName = 'card-front ';
+        cardFrontClassName += this.state.currentCard ? this.state.currentCard : 'empty';
         let message;
-        if (!this.state.currentCard) {
-            if (this.state.drawPile.length === 0) {
-                message = "Draw pile is empty"
-            } else {
-                message = "Click to draw a card"
-            }
+        if (this.state.drawPile.length === 0) {
+            message = "Draw pile is empty"
+        } else if (this.state.currentCard === null) {
+            message = "Click to draw a card"
         }
         return (
             <div className="deck-container">
                 <div className="deck">
-                    <div className={cardClassName} onClick={this.handleClick}>
-                        <span className="message">{message}</span>
-                        <div className="square"></div>
-                        <div className="square"></div>
+                    <div className="card-container" onClick={this.handleClick}>
+                        <div className={cardInnerClassName}>
+                            <div className="card-back">
+                                <p className="message">{message}</p>
+                            </div>
+                            <div className={cardFrontClassName}>
+                                <div className="square"></div>
+                                <div className="square"></div>
+                            </div>
+                        </div>
                     </div>
                     <div className="controls">
                         <button onClick={this.shuffle}>Shuffle</button>
