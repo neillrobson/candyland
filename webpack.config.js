@@ -27,7 +27,11 @@ module.exports = (env, argv) => ({
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: { importLoaders: 1 }
+                    },
+                    'postcss-loader'
                 ]
             },
             {
@@ -63,6 +67,6 @@ module.exports = (env, argv) => ({
     devServer: {
         contentBase: 'dist',
         watchContentBase: true,
-        port: 1000
+        port: 8080
     }
 });
