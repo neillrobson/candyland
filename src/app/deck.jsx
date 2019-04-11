@@ -3,19 +3,17 @@ import React from 'react';
 import './deck.css';
 import Logo from '../../res/gktwu.jpg';
 
-let drawPile = new Array(60);
-drawPile.fill("red", 0, 8)
-    .fill("red double", 8, 10)
-    .fill("orange", 10, 18)
-    .fill("orange double", 18, 20)
-    .fill("yellow", 20, 28)
-    .fill("yellow double", 28, 30)
-    .fill("green", 30, 38)
-    .fill("green double", 38, 40)
-    .fill("blue", 40, 48)
-    .fill("blue double", 48, 50)
-    .fill("purple", 50, 58)
-    .fill("purple double", 58, 60);
+let drawPile = new Array(50);
+drawPile.fill("orange", 0, 8)
+    .fill("orange double", 8, 10)
+    .fill("yellow", 10, 18)
+    .fill("yellow double", 18, 20)
+    .fill("green", 20, 28)
+    .fill("green double", 28, 30)
+    .fill("blue", 30, 38)
+    .fill("blue double", 38, 40)
+    .fill("purple", 40, 48)
+    .fill("purple double", 48, 50);
 
 const INITIAL_STATE = {
     currentCard: null,
