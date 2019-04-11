@@ -36,7 +36,7 @@ module.exports = (env, argv) => ({
                 ]
             },
             {
-                test: /\.(jpg|png|ico)$/,
+                test: /\.(png|ico)$/,
                 use: {
                     loader: 'file-loader'
                 }
@@ -74,7 +74,7 @@ module.exports = (env, argv) => ({
             start_url: "/candyland/",
             icons: [
                 {
-                    src: path.resolve("res/gktw-1024.jpg"),
+                    src: path.resolve("res/gktw-1024.png"),
                     sizes: [96, 128, 192, 256, 384, 512, 1024]
                 }
             ]
