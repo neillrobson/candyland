@@ -50,10 +50,6 @@ module.exports = (env, argv) => ({
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: ['**/*', '!.git']
         }),
-        new WorkboxPlugin.GenerateSW({
-            skipWaiting: true,
-            clientsClaim: true
-        }),
         new HtmlWebpackPlugin({
             hash: true,
             template: './index.html',
@@ -61,6 +57,10 @@ module.exports = (env, argv) => ({
             meta: {
                 description: "A simulator of a Candyland card deck."
             }
+        }),
+        new WorkboxPlugin.GenerateSW({
+            skipWaiting: true,
+            clientsClaim: true
         }),
         new PwaManifestPlugin({
             name: "Card Deck for Lifesize Candyland",
