@@ -40,8 +40,8 @@
   "short_name": "Candyland",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "/candyland",
   "theme_color": "#e393c2",
   "background_color": "#ffffff",
-  "scope": "/"
+  "scope": "/candyland"
 }
