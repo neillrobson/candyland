@@ -1,0 +1,47 @@
+{
+  "icons": [
+    {
+      "src": "icon_1024x1024.f397d2bda4964deda0cff23f461e35af.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_512x512.5f6770451af4dc8c2a309fd12405f763.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.177f4f0c6c77f82f923bad7293b840bc.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.339a3d19ef0f66cf073d1d464d82beb9.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.0fc56013d0084c82899c7e417405211f.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.034f09e962858ced463405b893ab7c0a.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.63405d00278284c7f77521329c694f93.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Card Deck for Lifesize Candyland",
+  "short_name": "Candyland",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/candyland/",
+  "theme_color": "#e393c2",
+  "background_color": "#ffffff",
+  "scope": "/candyland/"
+}
