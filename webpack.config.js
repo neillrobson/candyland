@@ -57,7 +57,10 @@ module.exports = (env, argv) => ({
         new HtmlWebpackPlugin({
             hash: true,
             template: './index.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            meta: {
+                description: "A simulator of a Candyland card deck."
+            }
         }),
         new PwaManifestPlugin({
             name: "Card Deck for Lifesize Candyland",
