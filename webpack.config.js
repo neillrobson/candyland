@@ -66,8 +66,8 @@ module.exports = (env, argv) => ({
             background_color: "#ffffff",
             display: "standalone",
             orientation: "portrait",
-            scope: "/",
-            start_url: "/",
+            scope: "/candyland",
+            start_url: "/candyland",
             icons: [
                 {
                     src: path.resolve("res/ico-1024.png"),
