@@ -80,7 +80,7 @@ export default class Deck extends React.Component {
                     <div className="card-container" onClick={this.handleClick}>
                         <div className={cardInnerClassName}>
                             <div className="card-back">
-                                <img className="logo" src={Logo}></img>
+                                <img className="logo" src={Logo} alt="Give Kids the World Logo"></img>
                                 <p className="message">{message}</p>
                             </div>
                             <div className={cardFrontClassName}>
