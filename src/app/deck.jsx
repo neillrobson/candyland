@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './deck.css';
-import Logo from '../../res/gktwu.jpg';
+import Logo from '../../res/gktw-u-full.jpg';
 
 let drawPile = new Array(50);
 drawPile.fill("orange", 0, 8)

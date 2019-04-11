@@ -36,7 +36,7 @@ module.exports = (env, argv) => ({
                 ]
             },
             {
-                test: /\.(jpg|png)$/,
+                test: /\.(jpg|png|ico)$/,
                 use: {
                     loader: 'file-loader'
                 }
@@ -56,7 +56,8 @@ module.exports = (env, argv) => ({
             filename: 'index.html',
             meta: {
                 description: "A simulator of a Candyland card deck."
-            }
+            },
+            favicon: path.resolve("res/favicon.ico")
         }),
         new WorkboxPlugin.GenerateSW({
             skipWaiting: true,
@@ -73,7 +74,7 @@ module.exports = (env, argv) => ({
             start_url: "/candyland/",
             icons: [
                 {
-                    src: path.resolve("res/ico-1024.png"),
+                    src: path.resolve("res/gktw-1024.jpg"),
                     sizes: [96, 128, 192, 256, 384, 512, 1024]
                 }
             ]
